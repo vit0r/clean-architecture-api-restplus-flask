@@ -1,0 +1,30 @@
+[[source]]
+name = "pypi"
+verify_ssl = true
+url = "https://pypi.org/simple"
+
+[dev-packages]
+alembic = "*"
+pylint = "*"
+
+[packages]
+pytest = "*"
+tox = "==3.1.2"
+flask-marshmallow = "*"
+pylint = "*"
+"autopep8" = "*"
+"psycopg2-binary" = "*"
+pytest-cov = "*"
+pytest-mock = "*"
+marshmallow-sqlalchemy = "*"
+Flask = "*"
+Flask-Cors = "*"
+Flask-SQLAlchemy = "*"
+Flask-Migrate = "*"
+flask-restplus = "*"
+flask-script = "*"
+"psycopg2" = "*"
+astroid = "*"
+
+[requires]
+python_version = "3.5"

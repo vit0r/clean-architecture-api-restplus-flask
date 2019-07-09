@@ -1,0 +1,12 @@
+{
+  "ENV": "production",
+  "DEBUG": false,
+  "SECRET_KEY": "15JwBe8F5oZRNQEeDjqLGJTOp1Zrz8v1m",
+  "SQLALCHEMY_TRACK_MODIFICATIONS": false,
+  "SQLALCHEMY_DATABASE_URI": "postgresql://postgres:postgres@localhost:5433/bookdatabase",
+  "JSON_SORT_KEYS": false,
+  "BLUEPRINTS": {
+    "version": "v1",
+    "prefix": "/api/"
+  }
+}
