@@ -9,7 +9,7 @@ pylint = "*"
 
 [packages]
 pytest = "*"
-tox = "==3.1.2"
+tox = "*"
 flask-marshmallow = "*"
 pylint = "*"
 "autopep8" = "*"
