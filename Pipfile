@@ -6,16 +6,17 @@ url = "https://pypi.org/simple"
 [dev-packages]
 alembic = "*"
 pylint = "*"
-
-[packages]
-pytest = "*"
-tox = "*"
-flask-marshmallow = "*"
-pylint = "*"
-"autopep8" = "*"
-"psycopg2-binary" = "*"
+black = "*"
 pytest-cov = "*"
 pytest-mock = "*"
+pylint = "*"
+"autopep8" = "*"
+pytest = "*"
+tox = "*"
+
+[packages]
+flask-marshmallow = "*"
+"psycopg2-binary" = "*"
 marshmallow-sqlalchemy = "*"
 Flask = "*"
 Flask-Cors = "*"
@@ -23,8 +24,8 @@ Flask-SQLAlchemy = "*"
 Flask-Migrate = "*"
 flask-restplus = "*"
 flask-script = "*"
-"psycopg2" = "*"
 astroid = "*"
+gunicorn = "*"
 
 [requires]
-python_version = "3.5"
+python_version = "3.7"

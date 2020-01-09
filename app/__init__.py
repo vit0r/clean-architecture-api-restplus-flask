@@ -2,14 +2,13 @@
 APP flask init
 """
 
+from core import DB, MIGRATE, get_instance, register_blueprints
 from flask import Flask
-
-from core import DB, MIGRATE, register_blueprints, get_instance
 
 
 def create_app():
     """Create app flask"""
-    instance_path, environ_file = get_instance('v1')
+    instance_path, environ_file = get_instance("v1")
     app = Flask(__name__, instance_path=instance_path)
     app.config.from_json(environ_file)
     app.url_map.strict_slashes = False

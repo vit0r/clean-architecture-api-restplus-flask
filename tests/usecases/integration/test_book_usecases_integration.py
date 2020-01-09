@@ -3,12 +3,12 @@
 from core.usecases.book_usecase import BookUseCase
 from tests.mocked_books_formated import valid_book_list
 
-
 # <editor-fold desc="tests-success">
 
 # The Following test is a Anti-Pattern. BookUseCase.find_all just call repository find_all,
 # which we already tested.
 # There's no need to test a method that only calls another method.
+
 
 def test_book_find_all():
     """Receive all books"""

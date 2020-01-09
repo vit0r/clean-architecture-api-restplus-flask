@@ -3,15 +3,14 @@
 
 from datetime import date
 
-from sqlalchemy import Column, String, Integer, Date
-
 from core import DB
+from sqlalchemy import Column, Date, Integer, String
 
 
 class Book(DB.Model):
     """Data model table book"""
 
-    __tablename__ = 'book'
+    __tablename__ = "book"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     title = Column(String(50), nullable=False, unique=True)
@@ -23,33 +22,33 @@ class Book(DB.Model):
     publication_date = Column(Date, default=date.today())
 
     def __repr__(self):
-        return '<id {}>'.format(self.id)
+        return "<id {}>".format(self.id)
 
     def __eq__(self, other):
         if self is None or other is None:
             return False
 
         return (
-                self.title == other.title and
-                self.synopsis == other.synopsis and
-                self.number_of_pages == other.number_of_pages and
-                self.author == other.author and
-                self.publisher == other.publisher and
-                self.language == other.language and
-                self.publication_date == other.publication_date
+            self.title == other.title
+            and self.synopsis == other.synopsis
+            and self.number_of_pages == other.number_of_pages
+            and self.author == other.author
+            and self.publisher == other.publisher
+            and self.language == other.language
+            and self.publication_date == other.publication_date
         )
 
     def valid_update(self):
         """Verify if there's at least one field that is not None"""
         if (
-                self.id or
-                self.title or
-                self.synopsis or
-                self.number_of_pages or
-                self.author or
-                self.publisher or
-                self.language or
-                self.publication_date
+            self.id
+            or self.title
+            or self.synopsis
+            or self.number_of_pages
+            or self.author
+            or self.publisher
+            or self.language
+            or self.publication_date
         ):
             return True
         return False

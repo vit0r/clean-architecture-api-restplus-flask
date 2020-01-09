@@ -9,7 +9,8 @@ def get_namespace_model(schema_name, api_ns, model):
     declared_fields = model._declared_fields
     model_fields = {
         field_name: getattr(fields, type(field_type).__name__)(
-            required=field_type.required, description=field_name)
+            required=field_type.required, description=field_name
+        )
         for field_name, field_type in declared_fields.items()
     }
     assert isinstance(schema_name, str)

@@ -1,10 +1,13 @@
 """This Module contains the Book Repository Integration Tests """
 import pytest
-
 from core.entities import Book
 from core.repository.book_repository import BookRepository
-from tests.mocked_books_formated import (valid_book_list, valid_book,
-                                         valid_updated_book, patched_title)
+from tests.mocked_books_formated import (
+    patched_title,
+    valid_book,
+    valid_book_list,
+    valid_updated_book,
+)
 
 
 def test_book_repository_find_all_success():
@@ -44,7 +47,7 @@ def test_book_repository_create_valid_book_success():
     assert book_created
 
 
-@pytest.mark.parametrize('book_id', [2])
+@pytest.mark.parametrize("book_id", [2])
 def test_book_repository_delete_valid_id_success(book_id):
     """Should be delete one book by id"""
     # Arrange
@@ -56,7 +59,6 @@ def test_book_repository_delete_valid_id_success(book_id):
     book_deleted = BookRepository().delete(book_id)
     # Assert
     assert book_deleted
-
 
 
 def test_book_repository_update_valid_data_success():
@@ -74,7 +76,9 @@ def test_book_repository_update_valid_data_success():
     book_to_update = BookRepository().find_by_id(book_id)
 
     # Act
-    book_updated = BookRepository().update_or_patch(book_to_update, valid_update_book_data)
+    book_updated = BookRepository().update_or_patch(
+        book_to_update, valid_update_book_data
+    )
 
     # Assert
     assert book_updated
@@ -85,7 +89,7 @@ def test_book_repository_update_valid_data_success():
 
 
 # A few more tests with different forms of parametrization.
-@pytest.mark.parametrize('book_patch', [(Book(title=patched_title()))])
+@pytest.mark.parametrize("book_patch", [(Book(title=patched_title()))])
 def test_book_repository_patch_valid_data_success_parametrize_example(book_patch):
     """Should be update or patch one book by id"""
     book_to_update = BookRepository().find_by_id(3)
@@ -104,7 +108,7 @@ def test_book_repository_find_id_invalid_id_not_found():
     assert book_found is None
 
 
-@pytest.mark.parametrize('book_id', [32200])
+@pytest.mark.parametrize("book_id", [32200])
 def test_book_repository_delete_invalid_id_error(book_id):
     """Should error to delete a non existing book"""
     book_deleted = BookRepository().delete(book_id)

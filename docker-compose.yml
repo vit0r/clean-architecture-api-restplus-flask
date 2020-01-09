@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 services:
   db.postgres:
     container_name: db.postgres_flask
@@ -6,6 +6,22 @@ services:
     restart: always
     ports:
       - '5432:5432'
+    environment:
+      - DEBUG=true
+      - POSTGRES_DB=bookdatabase
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - PGPASSWORD='postgres'
+    volumes:
+      - ./docker-context/volume:/var/lib/postgresql
+      - ./docker-context/init.sql:/docker-entrypoint-initdb.d/1-init.sql
+  app.books:
+    container_name: db.books_flask
+    build: 
+      context: .
+    restart: always
+    ports:
+      - '5000:5000'
     environment:
       - DEBUG=true
       - POSTGRES_DB=bookdatabase
