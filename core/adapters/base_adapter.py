@@ -15,7 +15,7 @@ class BaseAdapter(AbstractBaseAdapter):
         self.schema = schema
 
     def __repr__(self):
-        return '{}(entity, usecase)'.format(self.__class__.__name__)
+        return "{}(entity, usecase)".format(self.__class__.__name__)
 
     def find_by_id(self, book_id):
         book_found = self.usecase.find_by_id(book_id)

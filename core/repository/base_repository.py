@@ -1,8 +1,9 @@
 """
 This Module Provides Basic Repository Functionality
 """
-from sqlalchemy.exc import SQLAlchemyError
 from core.startup import DB
+from sqlalchemy.exc import SQLAlchemyError
+
 from . import AbstractBaseRepository
 
 
@@ -15,7 +16,7 @@ class BaseRepository(AbstractBaseRepository):
         self.__entity = entity
 
     def __repr__(self):
-        '{}(entity)'.format(self.__class__.__name__)
+        "{}(entity)".format(self.__class__.__name__)
 
     def __getitem__(self, item):
         return self.__entity.query.get(item)

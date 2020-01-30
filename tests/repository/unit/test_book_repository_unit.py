@@ -1,7 +1,6 @@
 """ This Module contains the Unit Tests of the Book Repository"""
 from core.repository.base_repository import BaseRepository
 from core.repository.book_repository import BookRepository
-
 from tests.mocked_books_formated import valid_book_list
 
 # The following test is an Anti-Pattern.
@@ -25,7 +24,7 @@ def test_book_repository_find_all_success(mocker):
     # Arrange - Here is where you prepare your test. Gherkin equivalent is "Given"
 
     # Here is how you mock using
-    mocker.patch('core.repository.base_repository.BaseRepository.find_all')
+    mocker.patch("core.repository.base_repository.BaseRepository.find_all")
     result_mock = valid_book_list()
     BaseRepository.find_all.return_value = result_mock
 

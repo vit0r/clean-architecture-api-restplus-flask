@@ -120,3 +120,5 @@ ENV/
 /.vs/config/applicationhost.config
 /.vs/VSWorkspaceState.json
 /.vs/test-pyramid-flask-example/v15/.suo
+
+.vscode

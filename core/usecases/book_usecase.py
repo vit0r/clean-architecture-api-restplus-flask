@@ -1,18 +1,20 @@
 """This Module contains the Usecases - write business codes rules"""
 
 from core.repository.book_repository import BookRepository
+
 from . import AbstractBaseBookUseCase
 
 
 class BookUseCase(AbstractBaseBookUseCase):
     """"This Class contains the App Usecases"""
+
     def __init__(self):
         """Init class values"""
         self.repository = BookRepository()
 
     def __repr__(self):
         """Representation of class"""
-        return '{}()'.format(self.__class__.__name__)
+        return "{}()".format(self.__class__.__name__)
 
     def find_by_id(self, book_id):
         """Find book by id"""
