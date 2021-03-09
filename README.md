@@ -1,13 +1,13 @@
 # How to run tests
 
-## with TOX
+> with TOX
 
 ```shell
 tox
 
 ```
 
-### or with pytest
+> or with pytest
 
 ```shell
 pytest -vv --cov app
@@ -21,7 +21,7 @@ pytest -vv --cov core
 pytest -v
 ```
 
-### Using pipenv
+> Using pipenv
 
 ```shell
 python3 -m pip install pipenv
